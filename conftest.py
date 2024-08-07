@@ -5,7 +5,7 @@ from pages.login_page import LoginPage
 
 @pytest.fixture(scope='session')
 def browser():
-    browser = webdriver.Chrome()  # до yield открывается браузер
+    browser = webdriver.Chrome()
     browser.maximize_window()
     yield browser
     browser.quit()
@@ -21,4 +21,6 @@ def auth_user(browser):
     page.login_btn()
     yield browser
     browser.quit()
+
+
 

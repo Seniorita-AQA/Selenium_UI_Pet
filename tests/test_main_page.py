@@ -46,10 +46,20 @@ def test_show_pet_details(browser):
 
 
 @pytest.mark.regression
-def test_like_pet_card(browser):
+def test_like_pet_card(browser, auth_user):
     link = 'http://34.141.58.52:8080/#/'
     page = MainPage(browser, link)
     page.open()
     page.like_pet_card()
     time.sleep(5)
     browser.save_screenshot('result_like_pet_card.png')
+
+
+@pytest.mark.regression
+def test_add_comment(browser, auth_user):
+    link = 'http://34.141.58.52:8080/#/'
+    page = MainPage(browser, link)
+    page.open()
+    page.like_pet_card()
+    time.sleep(5)
+    browser.save_screenshot('result_add_comment.png')
