@@ -3,7 +3,7 @@ from selenium import webdriver
 from pages.login_page import LoginPage
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='class')
 def browser():
     browser = webdriver.Chrome()
     browser.maximize_window()
@@ -11,7 +11,7 @@ def browser():
     browser.quit()
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='class')
 def auth_user(browser):
     link = "http://34.141.58.52:8080/#/login"
     page = LoginPage(browser, link)

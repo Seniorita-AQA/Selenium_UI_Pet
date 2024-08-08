@@ -28,6 +28,12 @@ class ProfilePageLocators:
     CHOOSE_PIK = (By.XPATH, '//*[@id="app"]/main/div/div/div[2]/div[2]/div/span/input')
     CLICK_ON_UPLOADED_BTN = (By.XPATH, '//div[@id="app"]/main/div/div/div[2]/div[2]/div/span')
 
+    CLICK_ON_EDIT_BTN = (By.CSS_SELECTOR, '.col-12:nth-child(1) .p-button:nth-child(1) > .p-button-label')
+    INPUT_NEW_PET_NAME = (By.XPATH, "//div[@class='p-card-body']//input[@id='name']")
+    DDOWN_TYPE_OPEN = (By.ID, 'typeSelector')
+    CHOOSE_NEW_PET_TYPE = (By.XPATH, "//li[@aria-label='dog']")
+    SAVE_BTN = (By.CSS_SELECTOR, '.p-button-success > .p-button-label')
+
     DELETE_BTN = (By.XPATH, "//div[@id='app']/main/div/div/div[2]/div/div/div/div[2]/button[2]/span[2]")
     DELETE_YES = (By.CSS_SELECTOR, '.p-confirm-popup-accept > .p-button-label')
 
