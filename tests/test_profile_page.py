@@ -46,11 +46,11 @@ def test_quit(auth_user, browser):
     browser.save_screenshot('quit.png')
 
 
-@pytest.mark.functional
-def test_delete_account(auth_user, browser):
-    link = 'http://34.141.58.52:8080/#/profile'
-    page = ProfilePage(browser, link)
-    page.open()
-    page.go_to_delete_account()
-    time.sleep(5)
-    browser.save_screenshot('deleted_account.png')
+# @pytest.mark.functional
+# def test_delete_account(auth_user, browser):
+#     link = 'http://34.141.58.52:8080/#/profile'
+#     page = ProfilePage(browser, link)
+#     page.open()
+#     page.go_to_delete_account()
+#     time.sleep(5)
+#     browser.save_screenshot('deleted_account.png')

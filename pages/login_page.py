@@ -15,3 +15,7 @@ class LoginPage(BasePage):
     def login_btn(self):
         click_login_btn = self.browser.find_element(*LoginPageLocators.LOGIN_BTN)
         click_login_btn.submit()
+
+    def find_profile(self):
+        profile = self.browser.find_element(*LoginPageLocators.PROFILE)
+        return profile
