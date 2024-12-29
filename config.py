@@ -1,3 +1,4 @@
 EMAIL = 'Your EMAIL'
+PASSWORD = 'Your PASSWORD'
 
 
