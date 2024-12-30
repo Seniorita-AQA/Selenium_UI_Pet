@@ -17,7 +17,8 @@ class ProfilePage(BasePage):
         choose_ava_btn = self.browser.find_element(*ProfilePageLocators.CLICK_ON_CHOOSE_AVA_BTN)
         choose_ava_btn.click()
         choose_ava = self.browser.find_element(*ProfilePageLocators.CHOOSE_PIK)
-        choose_ava.send_keys(r'C:\Users\User\PycharmProjects\Selenium_UI_Pet\pictures\Cat.jpeg')
+        choose_ava.send_keys(r'C:\Users\User\PycharmProjects\Selenium_UI_Pet\pictures\Cat.jpeg')  # for windows
+        # choose_ava.send_keys(r'/Users/User/PycharmProjects/Selenium_UI_Pet/pictures/Cat.jpeg')  # for macos
         add_ava = self.browser.find_element(*ProfilePageLocators.CLICK_ON_UPLOADED_BTN)
         add_ava.click()
 
