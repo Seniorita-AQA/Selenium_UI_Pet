@@ -1,9 +1,10 @@
 import pytest
 from driver_factory import create_driver
 from pages.login_page import LoginPage
+from config import SUPPORTED_BROWSERS, OPTIONAL_BROWSERS, DEFAULT_BROWSER
 
 
-@pytest.fixture(scope='class', params=['chrome'])
+@pytest.fixture(scope="class", params=DEFAULT_BROWSER)
 def driver(request):
     driver = create_driver(request.param)
     driver.maximize_window()

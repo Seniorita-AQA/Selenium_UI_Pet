@@ -1,7 +1,5 @@
 import time
-
 import pytest
-
 from pages.profile_page import ProfilePage
 
 
