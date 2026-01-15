@@ -18,6 +18,7 @@ class LoginPageLocators:
     LOGIN_BTN = (By.CLASS_NAME, "p-button-label")
     PROFILE = (By.XPATH, '//*[@id="app"]/header/div')
 
+
 class ProfilePageLocators:
     CREATE_CAT = (By.CLASS_NAME, 'pi-plus')
     INPUT_PET_NAME = (By.ID, 'name')
@@ -40,7 +41,7 @@ class ProfilePageLocators:
     DELETE_ACC_BTN = (By.CSS_SELECTOR, '.p-button-icon-only > .pi-trash')
     CONFIRM_DELETE_ACC_YES = (By.XPATH, '//div[3]/div[2]/button[2]/span')
 
-    QUIT_BTN = (By.CSS_SELECTOR,".p-menuitem:nth-child(2) .p-menuitem-text")
+    QUIT_BTN = (By.CSS_SELECTOR, ".p-menuitem:nth-child(2) .p-menuitem-text")
 
 
 class RegistrationPageLocators:
@@ -48,6 +49,3 @@ class RegistrationPageLocators:
     PASS_FIELD = (By.CSS_SELECTOR, '#password > .p-inputtext')
     CONFIRM_PASS = (By.CSS_SELECTOR, '#confirm_password > .p-inputtext')
     SUBMIT_BTN_REGISTRATION = (By.CSS_SELECTOR, '.p-button-label')
-
-
-

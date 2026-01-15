@@ -6,11 +6,11 @@ from pages.registration_page import RegistrationPage
 
 
 @pytest.mark.smoke
-def test_registration_user(browser):
+def test_registration_user(driver):
     link = 'http://34.141.58.52:8080/#/register'
-    page = RegistrationPage(browser, link)
+    page = RegistrationPage(driver, link)
     page.open()
     page.registration_user()
     time.sleep(5)
-    browser.save_screenshot('result_registered_user.png')
+    driver.save_screenshot('result_registered_user.png')
 

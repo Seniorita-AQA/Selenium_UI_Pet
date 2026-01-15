@@ -6,51 +6,43 @@ from pages.profile_page import ProfilePage
 
 
 @pytest.mark.functional
-def test_create_cat(auth_user, browser):
+def test_create_cat(auth_user, driver):
     link = 'http://34.141.58.52:8080/#/profile'
-    page = ProfilePage(browser, link)
+    page = ProfilePage(driver, link)
     page.open()
     page.go_to_create_cat()
     time.sleep(5)
-    browser.save_screenshot('create_new_pet.png')
+    driver.save_screenshot('create_new_pet.png')
 
 
 @pytest.mark.functional
-def test_edit_pet(auth_user, browser):
+def test_edit_pet(auth_user, driver):
     link = 'http://34.141.58.52:8080/#/profile'
-    page = ProfilePage(browser, link)
+    page = ProfilePage(driver, link)
     page.open()
     page.go_to_edit_pet()
     time.sleep(5)
-    browser.save_screenshot('edited_pet.png')
+    driver.save_screenshot('edited_pet.png')
 
 
 @pytest.mark.functional
-def test_delete_pet(auth_user, browser):
+def test_delete_pet(auth_user, driver):
     link = 'http://34.141.58.52:8080/#/profile'
-    page = ProfilePage(browser, link)
+    page = ProfilePage(driver, link)
     page.open()
     page.go_to_delete_pet()
     time.sleep(5)
-    browser.save_screenshot('deleted_pet.png')
+    driver.save_screenshot('deleted_pet.png')
 
 
 @pytest.mark.functional
-def test_quit(auth_user, browser):
-    browser = auth_user
+def test_quit(auth_user, driver):
+    driver = auth_user
     link = 'http://34.141.58.52:8080/#/profile'
-    page = ProfilePage(browser, link)
+    page = ProfilePage(driver, link)
     page.open()
     page.go_to_quit()
     time.sleep(5)
-    browser.save_screenshot('quit.png')
+    driver.save_screenshot('quit.png')
 
 
-# @pytest.mark.functional
-# def test_delete_account(auth_user, browser):
-#     link = 'http://34.141.58.52:8080/#/profile'
-#     page = ProfilePage(browser, link)
-#     page.open()
-#     page.go_to_delete_account()
-#     time.sleep(5)
-#     browser.save_screenshot('deleted_account.png')
