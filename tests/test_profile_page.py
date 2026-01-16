@@ -1,5 +1,3 @@
-import time
-
 import pytest
 
 from pages.profile_page import ProfilePage
@@ -11,7 +9,6 @@ def test_create_cat(auth_user, driver):
     page = ProfilePage(driver, link)
     page.open()
     page.go_to_create_cat()
-    time.sleep(5)
     driver.save_screenshot('create_new_pet.png')
 
 
@@ -21,7 +18,6 @@ def test_edit_pet(auth_user, driver):
     page = ProfilePage(driver, link)
     page.open()
     page.go_to_edit_pet()
-    time.sleep(5)
     driver.save_screenshot('edited_pet.png')
 
 
@@ -31,7 +27,6 @@ def test_delete_pet(auth_user, driver):
     page = ProfilePage(driver, link)
     page.open()
     page.go_to_delete_pet()
-    time.sleep(5)
     driver.save_screenshot('deleted_pet.png')
 
 
@@ -42,7 +37,6 @@ def test_quit(auth_user, driver):
     page = ProfilePage(driver, link)
     page.open()
     page.go_to_quit()
-    time.sleep(5)
     driver.save_screenshot('quit.png')
 
 
