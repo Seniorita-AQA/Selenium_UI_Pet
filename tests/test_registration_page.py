@@ -11,6 +11,5 @@ def test_registration_user(driver):
     page = RegistrationPage(driver, link)
     page.open()
     page.registration_user()
-    time.sleep(5)
     driver.save_screenshot('result_registered_user.png')
 

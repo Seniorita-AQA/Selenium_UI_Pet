@@ -2,20 +2,35 @@ from .base_page import BasePage
 from .locators import LoginPageLocators
 from config import EMAIL, PASSWORD
 
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 
 class LoginPage(BasePage):
-    def enter_email(self):
-        login_email = self.driver.find_element(*LoginPageLocators.LOGIN_EMAIL)
-        login_email.send_keys(EMAIL)
+    def log_in_user(self):
+        wait = WebDriverWait(self.driver, 10)
 
-    def enter_pass(self):
-        login_password = self.driver.find_element(*LoginPageLocators.LOGIN_PASS)
-        login_password.send_keys(PASSWORD)
+        # Login
+        login_email = wait.until(
+            EC.visibility_of_element_located(LoginPageLocators.LOGIN_EMAIL)
+        )
+        login_email.send_keys()
 
-    def login_btn(self):
-        click_login_btn = self.driver.find_element(*LoginPageLocators.LOGIN_BTN)
+        # Password
+        login_password = wait.until(
+            EC.visibility_of_element_located(LoginPageLocators.LOGIN_PASS)
+        )
+        login_password.send_keys()
+
+        # Submit
+        click_login_btn = wait.until(
+            EC.presence_of_element_located(LoginPageLocators.LOGIN_BTN)
+        )
         click_login_btn.submit()
 
-    def find_profile(self):
-        profile = self.driver.find_element(*LoginPageLocators.PROFILE)
+        # User is logged in
+        profile = wait.until(
+            EC.visibility_of_element_located(LoginPageLocators.PROFILE)
+        )
+
         return profile
