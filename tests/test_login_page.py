@@ -11,12 +11,12 @@ from pages.login_page import LoginPage
 def test_log_in(driver):
     link = "http://34.141.58.52:8080/#/login"
     page = LoginPage(driver, link)
+
     page.open()
-    page.log_in_user()
+    profile = page.log_in_user()
     with allure.step('Make screenshot'):
         allure.attach(driver.get_screenshot_as_png(), name='result_profile_p_opened',
                       attachment_type=AttachmentType.PNG)
-    # driver.save_screenshot('result_submit.png')
-    profile = page.log_in_user()
-    assert profile
+
+    assert profile.is_displayed(), "The user isn't logged in"
 

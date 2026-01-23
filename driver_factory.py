@@ -6,9 +6,12 @@ from selenium.webdriver.edge.service import Service as EdgeService
 
 
 # Paths to local driver binaries
-CHROME_DRIVER_PATH = r"C:\Drivers\chromdriver\chromedriver.exe"
+# CHROME_DRIVER_PATH = r"C:\Drivers\chromdriver\chromedriver.exe"
 FIREFOX_DRIVER_PATH = r"C:\Drivers\geckodriver-v0.36.0-win64\geckodriver.exe"
 EDGE_DRIVER_PATH = r"C:\Drivers\edgedriver_win64\msedgedriver.exe"
+
+"""for testing on MacOS"""
+CHROME_DRIVER_PATH = r"/opt/homebrew/bin/chromedriver"
 
 
 def create_driver(browser: str):
