@@ -17,9 +17,7 @@ def auth_user(driver):
     link = "http://34.141.58.52:8080/#/login"
     page = LoginPage(driver, link)
     page.open()
-    page.enter_email()
-    page.enter_pass()
-    page.login_btn()
+    page.log_in_user()
     yield driver
 
 
