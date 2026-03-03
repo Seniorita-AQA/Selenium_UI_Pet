@@ -8,12 +8,12 @@ from selenium.webdriver.safari.service import Service as SafariService
 import sys
 
 """Paths to local driver binaries for Win"""
-# CHROME_DRIVER_PATH = r"C:\Drivers\chromdriver\chromedriver.exe"
+CHROME_DRIVER_PATH = r"C:\Drivers\chromdriver\chromedriver.exe"
 FIREFOX_DRIVER_PATH = r"C:\Drivers\geckodriver-v0.36.0-win64\geckodriver.exe"
 EDGE_DRIVER_PATH = r"C:\Drivers\edgedriver_win64\msedgedriver.exe"
 
-"""Path to local driver for testing on MacOS"""
-CHROME_DRIVER_PATH = r"/opt/homebrew/bin/chromedriver"
+"""Path to local driver for testing on Chrome browser on MacOS"""
+CHROME_DRIVER_PATH_MACOS = r"/opt/homebrew/bin/chromedriver"
 
 
 def create_driver(browser: str):
@@ -22,6 +22,10 @@ def create_driver(browser: str):
 
     if browser == "chrome":
         service = ChromeService(executable_path=CHROME_DRIVER_PATH)
+        driver = webdriver.Chrome(service=service)
+
+    elif browser == "chrome":
+        service = ChromeService(executable_path=CHROME_DRIVER_PATH_MACOS)
         driver = webdriver.Chrome(service=service)
 
     elif browser == "firefox":
